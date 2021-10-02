@@ -13,7 +13,7 @@ public class RegisterLoginFunction{
 	LoginPageObject loginPageObject;
 	RegisterPageObject registerPageObject;
 	HomePageObject homePageObject;
-	public RegisterLoginFunction() throws IllegalArgumentException, IllegalAccessException, InstantiationException, SecurityException {
+	public RegisterLoginFunction() {
 		driver = new AbstractTest().getDriver();
 		loginPageObject = new LoginPageObject(driver);
 		registerPageObject = new RegisterPageObject(driver);

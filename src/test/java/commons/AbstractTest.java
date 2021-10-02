@@ -31,7 +31,7 @@ public class AbstractTest {
 	PageManager pageManager = new PageManager();
 	
 	public WebDriver openMultiBrowser() {
-		pageManager.funcReadPropertiesFile("src/main/resources/browser.properties");
+		PageManager.funcReadPropertiesFile("src/main/resources/browser.properties");
 		String browserName = System.getProperty("browser");
 		if (browserName.trim().equals("Chrome")) {
 			System.setProperty("webdriver.chrome.driver",
