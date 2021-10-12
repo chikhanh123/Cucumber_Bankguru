@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import commons.AbstractPage;
 import interfaces.AddCustomerPageUI;
 import org.junit.Assert;
+import org.junit.rules.ExpectedException;
 
 public class AddCustomerPageObject extends AbstractPage {
 	public AddCustomerPageObject(WebDriver driver) {
@@ -75,29 +76,65 @@ public class AddCustomerPageObject extends AbstractPage {
 			waitForElementVisible(dOB_txt);
 			clickToElement(dOB_txt);
 			clickToElement(submit_btn);
+			acceptAleart();
 			Assert.assertEquals(msg, dob_msg.getText());
 		} else if(fieldname.trim().equals("Address")) {
 			waitForElementVisible(address_txt);
 			clickToElement(address_txt);
 			clickToElement(submit_btn);
+			acceptAleart();
 			Assert.assertEquals(msg, address_msg.getText());
 		} else if(fieldname.trim().equals("City")) {
 			waitForElementVisible(city_txt);
 			clickToElement(city_txt);
 			clickToElement(submit_btn);
+			acceptAleart();
 			Assert.assertEquals(msg, city_msg.getText());
 		} else if(fieldname.trim().equals("State")) {
 			waitForElementVisible(state_txt);
 			clickToElement(state_txt);
 			clickToElement(submit_btn);
+			acceptAleart();
 			Assert.assertEquals(msg, state_msg.getText());
 		} else if(fieldname.trim().equals("PIN")) {
-			
+			waitForElementVisible(pin_txt);
+			clickToElement(pin_txt);
+			clickToElement(submit_btn);
+			acceptAleart();
+			Assert.assertEquals(msg, pin_msg.getText());
+		} else if(fieldname.trim().equals("Mobile Number")) {
+			waitForElementVisible(mobile_Number_txt);
+			clickToElement(mobile_Number_txt);
+			clickToElement(submit_btn);
+			acceptAleart();
+			Assert.assertEquals(msg, mobile_msg.getText());
+		} else if(fieldname.trim().equals("E-mail")) {
+			waitForElementVisible(email_txt);
+			clickToElement(email_txt);
+			clickToElement(submit_btn);
+			acceptAleart();
+			Assert.assertEquals(msg, emailID_msg.getText());
+		} else if(fieldname.trim().equals("Password")) {
+			waitForElementVisible(password_txt);
+			clickToElement(password_txt);
+			clickToElement(submit_btn);
+			acceptAleart();
+			Assert.assertEquals(msg, password_msg.getText());
 		}
-
-
 	}
 	
+	public void clickSubmitButton() {
+		try {
+		waitForElementVisible(submit_btn);
+		clickToElement(submit_btn);
+		} catch(Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public void verifyMsgIsDisPlayed(String msg) {
+		Assert.assertEquals(msg, getTextInAleart());
+	}
 	
 
 

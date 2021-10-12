@@ -2,7 +2,7 @@
 Feature: Add_New_Customer
 
 @Add_New_Customer
-Scenario: Verify error message when Customer Name, Date of Birth, Address, City, State, PIN, Mobile Number, E-mail, Password is blank
+Scenario Outline: Verify error message when Customer Name, Date of Birth, Address, City, State, PIN, Mobile Number, E-mail, Password is blank
 	Given Open Url
 	And   I input username "<username>" and password "<password>"
 	And   I click login button
@@ -20,7 +20,6 @@ Scenario: Verify error message when Customer Name, Date of Birth, Address, City,
 	Then  I verify error message "Password must not be blank" is displayed when "Password" field is blank at Add New Customer
 	When  I click submit button
 	Then  I verify content Aleart "please fill all fields" is displayed
-	
-|username |password       |		
-
+	Examples:
+|username |password    |		
 |mngr26593 |1!         |	

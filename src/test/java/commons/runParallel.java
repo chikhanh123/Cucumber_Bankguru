@@ -13,7 +13,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class) 
 @CucumberOptions(features = {
-		"src/test/resources/feature/register.feature",
+//		"src/test/resources/feature/register.feature",
+		"src/test/resources/feature/AddNewCustomer.feature",
 }
 						, glue = { "commons", "stepDefinition" }
 //						, tags = {" @TestBlazeDemo "}
