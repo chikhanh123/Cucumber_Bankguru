@@ -2,11 +2,13 @@ package pageObjects;
 
 import java.util.List;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import commons.AbstractPage;
 import interfaces.RegisterPageUI;
@@ -29,12 +31,8 @@ public class RegisterPageObject extends AbstractPage {
 	}
 
 	public void registerPageDisplayed() {
-		List<WebElement> lst = driver.findElements(By.xpath(RegisterPageUI.email_Textbox));
-		if (lst.size() < 1) {
-			Assert.assertEquals("Register page is displayed", "Register page is not displayed");
-		} else {
-			Assert.assertEquals("Register page is displayed", "Register page is displayed");
-		}
+		waitForElementVisible(email_Textbox);
+		Assert.assertTrue(email_Textbox.isDisplayed(), "Email textbox is not displayed");
 	}
 
 	public void inputToEmailIdtextbox(String email) {
@@ -42,24 +40,15 @@ public class RegisterPageObject extends AbstractPage {
 	}
 
 	public void clickToLoginButton() {
-		waitForElementVisible(submit_Button);
 		clickToElement(submit_Button);
 	}
 
 	public void verifyUserNameAndPassWordIsDisplayed() {
-		List<WebElement> lst = driver.findElements(By.xpath(RegisterPageUI.user_Id_Infor));
-		if (lst.size() < 1) {
-			Assert.assertEquals("user id is displayed", "user id is not displayed");
-		} else {
-			Assert.assertEquals("user id is displayed", "user id is displayed");
-
-		}
-		lst = driver.findElements(By.xpath(RegisterPageUI.password_Infor));
-		if (lst.size() < 1) {
-			Assert.assertEquals("password is displayed", "password is not displayed");
-		} else {
-			Assert.assertEquals("password is displayed", "password is displayed");
+		try {
+			Assert.assertTrue(user_Id_Infor.isDisplayed(), "User ID is not displayed");
+			Assert.assertTrue(password_Infor.isDisplayed(), "User ID is not displayed");
+		} catch (Exception e) {
+			e.getMessage();
 		}
 	}
-
 }

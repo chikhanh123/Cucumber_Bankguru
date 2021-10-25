@@ -1,26 +1,15 @@
 package commons;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.openqa.selenium.safari.SafariDriver;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import pageObjects.LoginPageObject;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
 
 public class AbstractTest {
 	public static WebDriver driver;
@@ -41,6 +30,8 @@ public class AbstractTest {
 			System.setProperty("webdriver.gecko.driver",
 					"/Users/dxcv/eclipse-workspace/POM_BANKGURU/resources/geckodriver");
 			driver = new FirefoxDriver();
+		} else if(browserName.trim().equals("Safari")) {
+			driver = new SafariDriver();
 		}
 		return driver;
 

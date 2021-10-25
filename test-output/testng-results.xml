@@ -1,47 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-07T08:49:45 ICT" name="Default suite" finished-at="2021-10-07T08:49:58 ICT" duration-ms="12591">
+  <suite started-at="2021-10-24T12:40:25 ICT" name="Default suite" finished-at="2021-10-24T12:40:30 ICT" duration-ms="4701">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:commons.runParallel@54bff557]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:commons.runParallel@6fd83fc1]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-10-07T08:49:45 ICT" name="Default test" finished-at="2021-10-07T08:49:58 ICT" duration-ms="12591">
+    <test started-at="2021-10-24T12:40:25 ICT" name="Default test" finished-at="2021-10-24T12:40:30 ICT" duration-ms="4701">
       <class name="commons.runParallel">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:commons.runParallel@54bff557]" started-at="2021-10-07T08:49:45 ICT" name="setUpClass" finished-at="2021-10-07T08:49:45 ICT" duration-ms="462" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:commons.runParallel@6fd83fc1]" started-at="2021-10-24T12:40:25 ICT" name="setUpClass" finished-at="2021-10-24T12:40:25 ICT" duration-ms="114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setupClassName(org.testng.ITestContext)[pri:0, instance:commons.runParallel@54bff557]" started-at="2021-10-07T08:49:45 ICT" name="setupClassName" finished-at="2021-10-07T08:49:45 ICT" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setupClassName(org.testng.ITestContext)[pri:0, instance:commons.runParallel@6fd83fc1]" started-at="2021-10-24T12:40:25 ICT" name="setupClassName" finished-at="2021-10-24T12:40:25 ICT" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3d3f761a]]>
+                <![CDATA[org.testng.TestRunner@a22cb6a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClassName -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:commons.runParallel@54bff557]" started-at="2021-10-07T08:49:46 ICT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-07T08:49:58 ICT" duration-ms="11997" status="PASS">
+        <test-method signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:commons.runParallel@6fd83fc1]" started-at="2021-10-24T12:40:25 ICT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-24T12:40:30 ICT" duration-ms="4440" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify error message when Customer Name, Date of Birth, Address, City, State, PIN, Mobile Number, E-mail, Password is blank"]]>
+                <![CDATA["User can register bank guru account successful"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Add_New_Customer]"]]>
+                <![CDATA["Register account bank Guru"]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchFrameException">
+            <message>
+              <![CDATA[
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DXCs-MacBook-Pro.local', ip: 'fe80:0:0:0:71:8431:d555:6993%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.5', java.version: '11.0.12'
+Driver info: org.openqa.selenium.safari.SafariDriver
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 14.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 20G165, safari:platformVersion: 11.6, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: EEE14C3B-72D3-497F-8195-ED16EEFC5F8B
+*** Element info: {Using=xpath, value=//input[@name='emailid']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchFrameException: 
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DXCs-MacBook-Pro.local', ip: 'fe80:0:0:0:71:8431:d555:6993%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.5', java.version: '11.0.12'
+Driver info: org.openqa.selenium.safari.SafariDriver
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 14.1.2, javascriptEnabled: true, platform: MAC, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 20G165, safari:platformVersion: 11.6, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Session ID: EEE14C3B-72D3-497F-8195-ED16EEFC5F8B
+*** Element info: {Using=xpath, value=//input[@name='emailid']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:432)
+at org.openqa.selenium.By$ByXPath.findElements(By.java:348)
+at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
+at pageObjects.RegisterPageObject.registerPageDisplayed(RegisterPageObject.java:35)
+at stepDefinition.RegisterLoginFunction.I_verify_register_page_is_displayed(RegisterLoginFunction.java:38)
+at ✽.I verify register page is displayed(file:src/test/resources/feature/register.feature:9)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchFrameException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:commons.runParallel@54bff557]" started-at="2021-10-07T08:49:58 ICT" name="tearDownClass" finished-at="2021-10-07T08:49:58 ICT" duration-ms="89" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:commons.runParallel@6fd83fc1]" started-at="2021-10-24T12:40:30 ICT" name="tearDownClass" finished-at="2021-10-24T12:40:30 ICT" duration-ms="77" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

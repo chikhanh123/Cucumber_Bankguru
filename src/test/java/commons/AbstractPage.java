@@ -20,6 +20,7 @@ public class AbstractPage {
 	Actions action;
 	public WebDriver driver;
 	long longTimeOut = 30;
+	String browserName = System.getProperty("browser");
 
 	public void openUrl(String ulr) {
 		driver.get(ulr);
@@ -61,12 +62,17 @@ public class AbstractPage {
 		return driver.switchTo().alert().getText();
 	}
 
-	public void sendkeysToAleart( String value) {
+	public void sendkeysToAleart(String value) {
 		driver.switchTo().alert().sendKeys(value);
 	}
 
 	public void clickToElement(WebElement element) {
-		element.click();
+		waitForElementClickable(element);
+		if (browserName.equalsIgnoreCase("safari")) {
+			clickToElementByJS(element);
+		} else {
+			element.click();
+		}
 	}
 
 	public void sendkeysToElement(WebElement element, String vakue) {
@@ -87,8 +93,7 @@ public class AbstractPage {
 		return select.getFirstSelectedOption().getText();
 	}
 
-	public void Select_Item_Dropdownlist(String parentxpath, String allItemXpath, String ItemValue)
-			throws Exception {
+	public void Select_Item_Dropdownlist(String parentxpath, String allItemXpath, String ItemValue) throws Exception {
 //		  click vao dropdown de show ra item
 		javascriptExecutor = (JavascriptExecutor) driver;
 //		  sử dụng khi nút cần click không hiển thị trên màn hình phải kéo xuống mới thấy
@@ -196,10 +201,9 @@ public class AbstractPage {
 		return waitExplicit.until(ExpectedConditions.visibilityOf(element));
 	}
 
-	public void waitForElementClickable(String locator) {
+	public void waitForElementClickable(WebElement element) {
 		waitExplicit = new WebDriverWait(driver, longTimeOut);
-		By bylocator = By.xpath(locator);
-		waitExplicit.until(ExpectedConditions.elementToBeClickable(bylocator));
+		waitExplicit.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 	public void waitForElementInvisible(WebElement element) {
@@ -211,10 +215,9 @@ public class AbstractPage {
 		waitExplicit = new WebDriverWait(driver, longTimeOut);
 		waitExplicit.until(ExpectedConditions.alertIsPresent());
 	}
-	
+
 	public void initElement(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
-	
 }

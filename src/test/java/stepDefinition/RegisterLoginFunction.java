@@ -3,7 +3,7 @@ package stepDefinition;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractTest;
-import io.cucumber.java.en.Then;
+import cucumber.api.java.en.Then;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;

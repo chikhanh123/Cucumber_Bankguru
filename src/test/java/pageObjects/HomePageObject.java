@@ -27,6 +27,7 @@ public class HomePageObject extends AbstractPage {
 	WebElement  new_Customer;
 	
 	public void verifyHomePageIsDisplayed() {
+		waitForElementVisible(welcome_Message_Text);
 		List<WebElement> lst = driver.findElements(By.xpath(HomePageUI.welcome_Message_Text));
 		if(lst.size() < 1) {
 			Assert.assertEquals("Field is displayed", "Field is not displayed");
