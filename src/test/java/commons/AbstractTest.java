@@ -24,7 +24,7 @@ public class AbstractTest {
 		String browserName = System.getProperty("browser");
 		if (browserName.trim().equals("Chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					"/Users/dxcv/eclipse-workspace/POM_BANKGURU/resources/chromedriver");
+					"C:\\Users\\Neolab\\eclipse-workspace\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.trim().equals("Firefox")) {
 			System.setProperty("webdriver.gecko.driver",
